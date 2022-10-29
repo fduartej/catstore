@@ -28,7 +28,7 @@ namespace catstore.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Contacto objContacto)
+        public IActionResult Create(Contacto objContacto)
         {
             _context.Add(objContacto);
             _context.SaveChanges();
