@@ -1,21 +1,27 @@
 GET https://localhost:7081/api/producto HTTP/1.1
 Accept: application/json
 
-GET https://localhost:7081/api/producto/1 HTTP/1.1
+GET https://localhost:7081/api/producto/6 HTTP/1.1
 Accept: application/json
 
-POST https://localhost:7081/api/producto HTTP/1.1
+POST https://localhost:7081/api/productoref HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 
 {
-  "name": "Otro Producto",
-  "descripcion": "Este libro otro producto",
-  "precio": 15.50,
+  "name": "Otro Producto3",
+  "descripcion": "Este libro otro producto3",
+  "precio": 2,
   "porcentajeDescuento": 0,
   "imageName": "imagen2.jpg",
   "status": "Activo"
 }
+
+
+GET https://api.spotify.com/v1/me HTTP/1.1
+Accept: application/json
+Authorization: Bearer BQCxmwQ8R-4EZMhQ5ef48pyPLhPmSkzfapx_Y0Mzkdf3vZWY4keHr-NiRdTxlS5W7iYfUdkQWH_r_2_GdBJJ07zqTt_bGWNV5PKvv6TKN_AqwMjLh3RjAYrRurGpvFRhkVOPR_HRS9UqS7v6IkfmcPv38_teypqTLsQVo-0dV9debiUC_J4etl45b6bsftMdJJxpi9Snv_L8NTbH
+
 
 GET https://gorest.co.in/public/v2/users HTTP/1.1
 

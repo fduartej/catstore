@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-
-using catstore.Data;
+using Microsoft.AspNetCore.Http;
 using catstore.Models;
 using catstore.Services;
 
@@ -24,8 +19,17 @@ namespace catstore.Controllers.Rest
 
   
         [HttpPost]
-        public Task<Producto> CreateProducto(Producto producto){
-            return _service.crearProducto(producto);
+        [ProducesResponseType(200)]
+        [ProducesResponseType(500)]
+        public async Task<IActionResult> CreateProducto(Producto producto){
+            try{
+                var data = _service.crearProducto(producto);  
+                return Ok(data);
+            }catch(Exception ex){
+               var res=new ObjectResult(ex.Message);
+               res.StatusCode = 500;
+               return res;
+            }
         }
 
     }
