@@ -1,6 +1,11 @@
 GET https://localhost:7081/api/producto HTTP/1.1
 Accept: application/json
 
+Produce 
+METODO URL BASE / ENDPOINT PROTOCOLO
+HEADERS
+
+
 GET https://localhost:7081/api/producto/6 HTTP/1.1
 Accept: application/json
 
@@ -17,13 +22,34 @@ Accept: application/json
   "status": "Activo"
 }
 
+client_id=85f2fc00-88aa-4437-8d5d-cf9408de0529&
+grant_type=client_credentials&
+resource=https%3A%2F%2Finteligo.crm.dynamics.com&
+client_secret=e_p3bG4_nH19WCdA%5DM%5BYPGc-d5Vb4SL3
+
+POST https://accounts.spotify.com/authorize? HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials&client_secret=ef9fb3240c894034b47a97f6e15a10cd&client_id=fce832f821bf46399e9650a8572c968f&scope=user-read-private&redirect_uri=http%3A%2F%2Flocalhost%3A5001&state=1234&show_dialog=false
+
+POST https://accounts.spotify.com/api/token HTTP/1.1
+Accept: application/json
+Authorization: Basic ZmNlODMyZjgyMWJmNDYzOTllOTY1MGE4NTcyYzk2OGY6ZWY5ZmIzMjQwYzg5NDAzNGI0N2E5N2Y2ZTE1YTEwY2Q=
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials
+
 
 GET https://api.spotify.com/v1/me HTTP/1.1
 Accept: application/json
-Authorization: Bearer BQCxmwQ8R-4EZMhQ5ef48pyPLhPmSkzfapx_Y0Mzkdf3vZWY4keHr-NiRdTxlS5W7iYfUdkQWH_r_2_GdBJJ07zqTt_bGWNV5PKvv6TKN_AqwMjLh3RjAYrRurGpvFRhkVOPR_HRS9UqS7v6IkfmcPv38_teypqTLsQVo-0dV9debiUC_J4etl45b6bsftMdJJxpi9Snv_L8NTbH
+Authorization: Bearer BQBOb7uvTN39cF_vmypDO_BpWBMbuykIs1RqGlFAkbI0dtnXQvgqcNVcr8rqK7OTCcKHkEcIMEISunTcGvhMmta-Ce8dhwSxi0DUvpa6wc2Njmluav8
+
+codigo token
+codigo endpoint
 
 
 GET https://gorest.co.in/public/v2/users HTTP/1.1
+Accept: application/json
 
 POST https://gorest.co.in/public/v2/users HTTP/1.1
 Content-Type: application/json

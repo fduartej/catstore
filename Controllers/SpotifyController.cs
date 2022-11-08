@@ -39,15 +39,26 @@ namespace catstore.Controllers
                 token = strtoken;
             }
 
+            //GET https://gorest.co.in/public/v2/users HTTP/1.1
+            //Accept: application/json
+            
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Accept.Clear();
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
             httpClient.BaseAddress = new Uri(URL_BASE);
+            
+            // aqui agregar en caso necesita token
             //httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            
+            //codigo para en caso de enviar un post con un request
+            //var users = new catstore.DTO.gorest.Users();
+            //users.email ="";
+            //HttpResponseMessage response = await httpClient.PostAsJsonAsync(URL_API,users);
+
             HttpResponseMessage response = await httpClient.GetAsync(URL_API);
             List<Users>? me = await response.Content.ReadFromJsonAsync<List<Users>>();
-            //HttpResponseMessage response = await httpClient.PostAsync(URL_API,input);
+            
 
             //UserSpotify? me = await response.Content.ReadFromJsonAsync<UserSpotify>();
             return View("IndexGorest",me);
